@@ -1,0 +1,70 @@
+{
+  "name": "@openilink/openclaw-channel",
+  "version": "0.1.0",
+  "description": "OpenILink WeChat channel plugin for OpenClaw",
+  "keywords": [
+    "openclaw",
+    "channel",
+    "wechat",
+    "openilink",
+    "ilink"
+  ],
+  "homepage": "https://github.com/openilink/openclaw-channel-openilink",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openilink/openclaw-channel-openilink.git"
+  },
+  "files": [
+    "index.ts",
+    "src/**/*.ts",
+    "openclaw.plugin.json"
+  ],
+  "type": "module",
+  "main": "index.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "lint": "oxlint --type-aware index.ts src",
+    "test": "vitest run",
+    "type-check": "tsc -p tsconfig.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^3.2.0"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.2.13"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channels": [
+      "openilink"
+    ],
+    "installDependencies": true,
+    "channel": {
+      "id": "openilink",
+      "label": "OpenILink",
+      "selectionLabel": "OpenILink (WeChat via iLink)",
+      "docsPath": "/channels/openilink",
+      "docsLabel": "openilink",
+      "blurb": "WeChat messaging via OpenILink Hub. Requires an OpenILink Hub instance with a bound WeChat bot.",
+      "order": 80,
+      "aliases": [
+        "ilink",
+        "wechat-ilink"
+      ]
+    },
+    "install": {
+      "npmSpec": "@openilink/openclaw-channel",
+      "localPath": ".",
+      "defaultChoice": "npm"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "id": "openilink",
+  "channels": ["openilink"],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {}
+  }
+}
